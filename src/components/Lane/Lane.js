@@ -31,8 +31,8 @@ const Alert = styled.div`
   text-align: center;
   `;
 
-  const Lane = ({ tickets, loading, error, onDragStart, title }) => (
-  <LaneWrapper>
+  const Lane = ({ tickets, loading, error, onDragOver, title }) => (
+    <LaneWrapper onDragOver={onDragOver}>
     <Title>{title}</Title>
     {(loading || error) && <Alert>{loading ? 'Loading...' : error}</Alert>}
     <TicketsWrapper>
